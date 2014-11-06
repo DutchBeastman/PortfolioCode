@@ -58,12 +58,9 @@ public class ShootingTower : MonoBehaviour {
 
 		}
 	}
-	void OnCollisionEnter(Collision col){
-		Debug.Log("Swagg");
-	}
 	void OnTriggerEnter(Collider col)
 	{	
-		Debug.Log("hasjkl;sjf");
+	
 		rotating = false;
 		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32"){
  
@@ -78,10 +75,10 @@ public class ShootingTower : MonoBehaviour {
 
 		if(col.name == "Enemy11" ||col.name == "Enemy12" ||col.name == "Enemy2" ||col.name == "Enemy31" ||col.name == "Enemy32")
 		{
-			//transform.rotation = Quaternion.LookRotation(RotatingToZero);
+			
 			rotating = false;
 
-			//transform.LookAt(RotatingToZero);
+		
 			if(enemiesInRange.Contains(col.gameObject))
 			{
 				enemiesInRange.Remove(col.gameObject);
@@ -90,12 +87,4 @@ public class ShootingTower : MonoBehaviour {
 
 	}
 
-	void Update(){
-		if(Input.GetKeyDown(KeyCode.N))
-		{
-			Application.LoadLevel("Dead");
-		}
-
-
-	}
 }
